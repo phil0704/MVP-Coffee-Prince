@@ -80,6 +80,7 @@
            var pprice = $form.find(".pprice").val();
            var pimage = $form.find(".pimage").val();
            var pcode = $form.find(".pcode").val();
+           
            console.log($form,pid,pname,pprice,pimage,pcode);
 
            $.ajax({

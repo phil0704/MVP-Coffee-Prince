@@ -19,9 +19,9 @@
 
        if(!$code) 
        {
-          $query = $conn->prepare("INSERT INTO cart (product_name, product_price, product_image, qty, product_code) VALUES (?,?,?,?,?)");
+          $query = $conn->prepare("INSERT INTO cart (product_name, product_price, product_image, qty, total_price, product_code) VALUES (?,?,?,?,?,?)");
          //var_dump($query);
-          $query->bind_param("sssis", $pname, $pprice, $pimage, $pqty, $pcode);
+          $query->bind_param("sssiss", $pname, $pprice, $pimage, $pqty, $pprice, $pcode,);
           $query->execute();
 
           echo '<div class="alert alert-success alert-dismissible mt-2">
@@ -45,4 +45,5 @@
 
        echo $rows;
    }
+   
 ?>
