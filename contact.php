@@ -23,7 +23,7 @@
                     <a class="nav-item nav-link" href="products.php">Products</a>
                     <a class="nav-item nav-link" href="about.php">About</a>
                     <a class="nav-item nav-link" href="contact.php">Contact</a>
-                    <a class="nav-item nav-link" href="cart.php"><i class="fa fa-shopping-cart"></i><span id="cart-item" class="badge badge-danger">4</span></a>
+                    <a class="nav-item nav-link" href="cart.php"><i class="fa fa-shopping-cart"></i><span id="cart-item" class="badge badge-danger"></span></a>
                 </div>
             </div>
     </nav> 

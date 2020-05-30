@@ -23,12 +23,13 @@
                     <a class="nav-item nav-link" href="products.php">Products</a>
                     <a class="nav-item nav-link" href="about.php">About</a>
                     <a class="nav-item nav-link" href="contact.php">Contact</a>
-                    <a class="nav-item nav-link" href="cart.php"><i class="fa fa-shopping-cart"></i><span id="cart-item" class="badge badge-danger">4</span></a>
+                    <a class="nav-item nav-link" href="cart.php"><i class="fa fa-shopping-cart"></i><span id="cart-item" class="badge badge-danger"></span></a>
                 </div>
             </div>
     </nav> 
 
     <div class="container">
+      <div id="message"></div>
     <div class="row">
      <?php
         include 'config.php';
@@ -46,8 +47,14 @@
              <h5 class="card-title text-center text-info">$<?= $row['product_price'] ?></h5>
            </div>
            <div class="card-footer p-1">
-             <a href="action.php?id=<?= $row['id'] ?>" class="btn btn-info btn-block"><i class="fa fa-cart-plus"></i>&nbsp;&nbsp;Add to cart</a>
-
+             <form action="" class="form-submit">
+               <input type="hidden" class="pid" value="<?= $row['id'] ?>">
+               <input type="hidden" class="pname" value="<?= $row['product_name'] ?>">
+               <input type="hidden" class="pprice" value="<?= $row['product_price'] ?>">
+               <input type="hidden" class="pimage" value="<?= $row['product_image'] ?>">
+               <input type="hidden" class="pcode" value="<?= $row['product_code'] ?>">
+               <button class="btn btn-info btn-block addItemBtn"><i class="fa fa-cart-plus"></i>&nbsp;&nbsp;Add to cart</button>
+             </form>
            </div>
          </div>
        </div>
@@ -61,7 +68,49 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script type="text/javascript">
 
+       $(document).ready(function(){
+         $(".addItemBtn").click(function(e){
+           e.preventDefault();
+           var $form = $(this).closest(".form-submit");
+           var pid = $form.find(".pid").val();
+           var pname = $form.find(".pname").val();
+           var pprice = $form.find(".pprice").val();
+           var pimage = $form.find(".pimage").val();
+           var pcode = $form.find(".pcode").val();
+           console.log($form,pid,pname,pprice,pimage,pcode);
+
+           $.ajax({
+             url: './action.php',
+             method: 'post',
+             data: { pid:pid, pname:pname, pprice:pprice, pimage:pimage, pcode:pcode },
+             success: function(response){
+               console.log(response);
+               $("#message").html(response);
+               load_cart_item_number();
+             },
+             error: function(error){
+               console.log(error);
+             }
+           });
+         });
+
+         load_cart_item_number();
+
+         function load_cart_item_number(){
+           $.ajax({
+             url: 'action.php',
+             method: 'get',
+             data: {cartItem: "cart_item"},
+             success: function(response){
+               $("#cart-item").html(response);
+             }
+           });
+         }
+       });
+    </script>
     <footer class="card bg-light text-center py-5">
         <p>Copyright 2020. Coffee Prince. All Rights Reserved</p>
       </footer>
