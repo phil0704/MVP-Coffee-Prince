@@ -109,6 +109,7 @@
              }
            });
          }
+
        });
     </script>
     <footer class="card bg-light text-center py-5">
