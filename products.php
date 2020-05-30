@@ -7,6 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <title>Coffee Prince</title>
   </head>
@@ -18,13 +19,42 @@
           </button>
             <div class="collapse navbar-collapse" id="mainNav">
                 <div class="navbar-nav">
-                    <a class="nav-item nav-link active" href="index.html">Home</a>
-                    <a class="nav-item nav-link" href="shop.html">Shop</a>
-                    <a class="nav-item nav-link" href="about.html">About</a>
-                    <a class="nav-item nav-link" href="contact.html">Contact</a>
+                    <a class="nav-item nav-link active" href="index.php">Home</a>
+                    <a class="nav-item nav-link" href="products.php">Products</a>
+                    <a class="nav-item nav-link" href="about.php">About</a>
+                    <a class="nav-item nav-link" href="contact.php">Contact</a>
+                    <a class="nav-item nav-link" href="cart.php"><i class="fa fa-shopping-cart"></i><span id="cart-item" class="badge badge-danger">4</span></a>
                 </div>
             </div>
     </nav> 
+
+    <div class="container">
+    <div class="row">
+     <?php
+        include 'config.php';
+        $stmt = $conn->prepare("SELECT * FROM product");
+        $stmt->execute();
+        $result = $stmt->get_result();
+        while($row = $result->fetch_assoc()):
+      ?>
+     <div class="col-sm-6 col-md-4 col-lg-3 mb-2">
+       <div class="card-deck">
+         <div class="card p-2 border-secondary mb-2">
+           <img src="<?= $row['product_image'] ?>" class="card-img-top" height="250" alt="">
+           <div class="card-body p-1">
+             <h4 class="card-title text-center text-info"><?= $row['product_name'] ?></h4>
+             <h5 class="card-title text-center text-info">$<?= $row['product_price'] ?></h5>
+           </div>
+           <div class="card-footer p-1">
+             <a href="action.php?id=<?= $row['id'] ?>" class="btn btn-info btn-block"><i class="fa fa-cart-plus"></i>&nbsp;&nbsp;Add to cart</a>
+
+           </div>
+         </div>
+       </div>
+     </div>
+        <?php endwhile; ?>
+    </div>
+  </div> 
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

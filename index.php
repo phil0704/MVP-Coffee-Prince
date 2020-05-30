@@ -7,6 +7,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
     <title>Coffee Prince</title>
   </head>
@@ -18,10 +19,11 @@
           </button>
             <div class="collapse navbar-collapse" id="mainNav">
                 <div class="navbar-nav">
-                    <a class="nav-item nav-link active" href="index.html">Home</a>
-                    <a class="nav-item nav-link" href="shop.html">Shop</a>
-                    <a class="nav-item nav-link" href="about.html">About</a>
-                    <a class="nav-item nav-link" href="contact.html">Contact</a>
+                    <a class="nav-item nav-link active" href="index.php">Home</a>
+                    <a class="nav-item nav-link" href="products.php">Products</a>
+                    <a class="nav-item nav-link" href="about.php">About</a>
+                    <a class="nav-item nav-link" href="contact.php">Contact</a>
+                    <a class="nav-item nav-link" href="cart.php"><i class="fa fa-shopping-cart"></i><span id="cart-item" class="badge badge-danger">4</span></a>
                 </div>
             </div>
     </nav> 
