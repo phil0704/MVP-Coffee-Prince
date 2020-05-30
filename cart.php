@@ -1,3 +1,7 @@
+<?php 
+  session_start();
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -23,7 +27,8 @@
                     <a class="nav-item nav-link" href="products.php">Products</a>
                     <a class="nav-item nav-link" href="about.php">About</a>
                     <a class="nav-item nav-link" href="contact.php">Contact</a>
-                    <a class="nav-item nav-link active" href="cart.php"><i class="fa fa-shopping-cart"></i><span id="cart-item" class="badge badge-danger"></span></a>
+                    <a class="nav-item nav-link active" href="cart.php"><i class="fa fa-shopping-cart"></i>
+                    <span id="cart-item" class="badge badge-danger"></span></a>
                 </div>
             </div>
     </nav> 
@@ -31,6 +36,11 @@
     <div class="container">
       <div class="row justify-content-center">
          <div clss="col-lg-10">
+            <div style="display:<?php if(isset($_SESSION['showAlert'])) { echo $_SESSION['showAlert']; } 
+            else { echo 'none';} unset($_SESSION['showAlert']); ?>" class="alert alert-success alert-dismissible mt-3">
+               <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <strong><?php if(isset($_SESSION['message'])) { echo $_SESSION['message']; } unset($_SESSION['showAlert']); ?></strong> 
+            </div>
              <div class="table-responsive mt-2">
                  <table class="table table-bordered table-striped text-center">
                    <thead>

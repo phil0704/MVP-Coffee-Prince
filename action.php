@@ -1,4 +1,5 @@
 <?php 
+   session_start();
    require 'config.php';
 
    if(isset($_POST['pid'])) 
@@ -45,5 +46,23 @@
 
        echo $rows;
    }
-   
+   if(isset($_GET['remove'])) {
+       $id = $_GET['remove'];
+
+       $stmt = $conn->prepare("DELETE FROM cart WHERE id=?");
+       $stmt->bind_param("i", $id);
+       $stmt->execute();
+
+       $_SESSION['showAlert'] = 'block';
+       $_SESSION['message'] = 'Item removed from the cart!';
+       header('location:cart.php');
+
+   }
+   if(isset($_GET['clear'])) {
+       $stmt = $conn->prepare("DELETE FROM cart");
+       $stmt->execute();
+       $_SESSION['showAlert'] = 'block';
+       $_SESSION['message'] = ' All Item removed from the cart!';
+       header('location:cart.php');
+   }
 ?>
