@@ -17,6 +17,8 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <!-- Brand -->
+      <div><img src="./images/cafeicon4.jpg" style="height: 30px; border-right: 1px solid #333;" class="pr-3" alt=""></div>
         <div class="container">Coffee Prince</div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav">
             <span class="navbar-toggler-icon"></span>
@@ -72,9 +74,13 @@
                        ?>
                        <tr>
                        <td><?= $row['id'] ?></td>
+                       <input type="hidden" class="pid" value="<?= $row['id'] ?>">
                        <td><img src="<?= $row['product_image'] ?>" width="50" alt=""></td>
                        <td><?= $row['product_name'] ?></td>
                        <td>$<?= $row['product_price'] ?></td>
+
+                       <input type="hidden" class="pprice" value="<?= $row['product_price'] ?>">
+                       <!-- Quantity button -->
                        <td><input type="number" class="form-control itemQty" value="<?= $row['qty'] ?>" style="width:78px;"></td>
                        <td>$<?= $row['total_price'] ?></td>
                        <td><a href="action.php?remove=<?= $row['id'] ?>" class="text-danger lead" onclick="return confirm('Are you sure want to remove this item');"><i class="fa fa-trash"></i></a></td>
@@ -106,7 +112,28 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script type="text/javascript">
 
+      // Ajax code.
        $(document).ready(function(){
+
+           $(".itemQty").on('change', function() {
+               var $el = $(this).closest('tr');
+
+               var pid = $el.find(".pid").val();
+               var pprice = $el.find(".pprice").val();
+               var qty = $el.find(".itemQty").val();
+               location.reload(true);
+
+             // sending the request to server for the qty item.
+               $.ajax({
+                   url: 'action.php',
+                   method: 'post',
+                   cache: false,
+                   data: {qty:qty, pid:pid, pprice:pprice},
+                   success: function(response) {
+                       console.log(response);
+                   }
+               });
+           });
          load_cart_item_number();
 
          function load_cart_item_number(){

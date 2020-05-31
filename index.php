@@ -13,6 +13,8 @@
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <!-- Brand -->
+      <div><img src="./images/cafeicon4.jpg" style="height: 30px; border-right: 1px solid #333;" class="pr-3" alt=""></div>
         <div class="container">Coffee Prince</div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav">
             <span class="navbar-toggler-icon"></span>
