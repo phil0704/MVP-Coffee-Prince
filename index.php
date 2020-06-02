@@ -8,11 +8,17 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- This is our first favicon! -->
+    <link rel="shortcut icon" type="images/favicon/jpg" href="./images/cafeicon4.jpg">
     
+    <!-- Stylesheets -->
+		<link rel="stylesheet" type="text/css" href="./css/main.css">
+
     <title>Coffee Prince</title>
   </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <body data-spy="scroll" data=".navbar" data-offset="50">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <!-- Brand -->
       <div><img src="./images/cafeicon4.jpg" style="height: 30px; border-right: 1px solid #333;" class="pr-3" alt=""></div>
         <div class="container">Coffee Prince</div>
@@ -22,9 +28,10 @@
             <div class="collapse navbar-collapse" id="mainNav">
                 <div class="navbar-nav">
                     <a class="nav-item nav-link active" href="index.php">Home</a>
-                    <a class="nav-item nav-link" href="products.php">Products</a>
+                    <a class="nav-item nav-link" href="product.php">Product</a>
                     <a class="nav-item nav-link" href="about.php">About</a>
                     <a class="nav-item nav-link" href="contact.php">Contact</a>
+                    <a class="nav-item nav-link" href="checkout.php">Checkout</a>
                     <a class="nav-item nav-link" href="cart.php"><i class="fa fa-shopping-cart"></i><span id="cart-item" class="badge badge-danger"></span></a>
                 </div>
             </div>
@@ -32,14 +39,47 @@
 
     <div class="jumbotron jumbotron-fluid bg-dark text-white text-center">
       <div class="container">
-        <h1>Welcome To Coffee Prince</h1>
-        <p>Lorem Ipsum is a place holder text. While the classic lorem works very well, if you want some spicier alternatives we are serving those as well right here. This is our Coffee Ipsum Generator.</p>
+
+      <div id="demo" class="carousel slide" data-ride="carousel">
+
+         <!-- Indicators -->
+       <ul class="carousel-indicators">
+         <li data-target="#demo" data-slide-to="0" class="active"></li>
+         <li data-target="#demo" data-slide-to="1"></li>
+         <li data-target="#demo" data-slide-to="2"></li>
+       </ul>
+
+        <!-- The slideshow -->
+      <div class="carousel-inner mt-2 mb-2">
+         <div class="carousel-item active">
+           <img src="./images/coffee-shop1.jpg" alt="Coffee Shop">
+          </div>
+            <div class="carousel-item">
+              <img src="./images/coffee-shop2.jpg" alt="Coffee Shop">
+            </div>
+         <div class="carousel-item">
+             <img src="./images/coffee.shop.jpg" alt="Coffee Shop">
+         </div>
       </div>
-            <a href="shop.html" class="btn btn-primary">Shop Now</a>
+
+        <!-- Left and right controls -->
+       <a class="carousel-control-prev" href="#demo" data-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+       </a>
+       <a class="carousel-control-next" href="#demo" data-slide="next">
+          <span class="carousel-control-next-icon"></span>
+       </a>
+
+    </div>
+        
+        <h1>Welcome To Coffee Prince</h1>
+        <p>These exceptional tasting coffees originate from a single estate, or farm, in a specific growing area. The growing conditions like soil, altitude, climate, shade in these areas are considered ideal for creating premium, specialty coffees. These pure coffees capture the unique essence of a particular plant variety and region.</p>
+      </div>
+            <a href="product.php" class="btn btn-primary">Shop Now</a>
     </div>
 
     <div class="container text-muted">
-
+      <h4 class="text-center mb-4">Featured Products</h4>
       <!-- cards -->
         <div class="row">
         <div class="col-md-6 col-lg-3">

@@ -82,14 +82,14 @@
        $email = $_POST['email'];
        $phone = $_POST['phone'];
        $products = $_POST['products'];
-       $grand_total= $_POST['grand_total'];
+       $total_amount= $_POST['total_amount'];
        $address= $_POST['address'];
        $pmode= $_POST['pmode'];
 
        $data = '';
 
        $stmt = $conn->prepare("INSERT INTO orders (name, email, phone, address, pmode, products, amount_paid) VALUES(?,?,?,?,?,?,? )");
-       $stmt->bind_param("sssssss", $name, $email, $phone, $address, $pmode, $products, $grand_total);
+       $stmt->bind_param("sssssss", $name, $email, $phone, $address, $pmode, $products, $total_amount);
        $stmt->execute();
        $data .= '<div class="text-center">
                   <h1 class="display-4 mt-2 text-danger">Thank You</h1>
@@ -99,7 +99,7 @@
                   <h4>Email : '.$email.'</h4>
                   <h4>Phone : '.$phone.'</h4>
                   <h4>Address : '.$address.'</h4>
-                  <h4>Total Amount paid : '.($grand_total).'</h4>
+                  <h4>Total Amount paid : '.($total_amount).'</h4>
                   <h4>Payment Mode : '.$pmode.'</h4>
                 </div>';
         echo $data;        

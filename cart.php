@@ -13,6 +13,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <!-- This is our first favicon! -->
+    <link rel="shortcut icon" type="images/favicon/jpg" href="./images/cafeicon4.jpg">
+    
+    <!-- Stylesheets -->
+		<link rel="stylesheet" type="text/css" href="./css/main.css">
+
+
     <title>Coffee Prince</title>
   </head>
   <body>
@@ -26,10 +33,11 @@
             <div class="collapse navbar-collapse" id="mainNav">
                 <div class="navbar-nav">
                     <a class="nav-item nav-link" href="index.php">Home</a>
-                    <a class="nav-item nav-link" href="products.php">Products</a>
+                    <a class="nav-item nav-link" href="product.php">Product</a>
                     <a class="nav-item nav-link" href="about.php">About</a>
                     <a class="nav-item nav-link" href="contact.php">Contact</a>
-                    <a class="nav-item nav-link active" href="cart.php"><i class="fa fa-shopping-cart"></i>
+                    <a class="nav-item nav-link" href="checkout.php">Checkout</a>
+                    <a class="nav-item nav-link active" href="cart.php"><i class="fa fa-shopping-cart"></i> 
                     <span id="cart-item" class="badge badge-danger"></span></a>
                 </div>
             </div>
@@ -43,12 +51,12 @@
                <button type="button" class="close" data-dismiss="alert">&times;</button>
                 <strong><?php if(isset($_SESSION['message'])) { echo $_SESSION['message']; } unset($_SESSION['showAlert']); ?></strong> 
             </div>
-             <div class="table-responsive mt-2">
+             <div class="table-responsive mt-3">
                  <table class="table table-bordered table-striped text-center">
                    <thead>
                    <tr>
                       <td colspan="7">
-                        <h4 class="text-center text-info m-0">Products in your cart!</h4>
+                        <h4 class="text-center text-muted m-0">Products in your cart!</h4>
                       </td>
                     </tr>
                     <tr>
@@ -69,7 +77,7 @@
                           $stmt = $conn->prepare("SELECT * FROM cart");
                           $stmt->execute();
                           $result = $stmt->get_result();
-                          $grand_total = 0;
+                          $total_amount = 0;
                           while($row = $result->fetch_assoc()):
                        ?>
                        <tr>
@@ -85,16 +93,16 @@
                        <td>$<?= $row['total_price'] ?></td>
                        <td><a href="action.php?remove=<?= $row['id'] ?>" class="text-danger lead" onclick="return confirm('Are you sure want to remove this item');"><i class="fa fa-trash"></i></a></td>
                        </tr>
-                       <?php $grand_total += $row['total_price']; ?>
+                       <?php $total_amount += $row['total_price']; ?>
                           <?php endwhile; ?>
                           <tr>
                               <td colspan="3">
-                                  <a href="products.php" class="btn btn-success"><i class="fa fa-cart-plus"></i>&nbsp;&nbsp;Continue Shopping</a>
+                                  <a href="product.php" class="btn btn-success"><i class="fa fa-cart-plus"></i>&nbsp;&nbsp;Continue Shopping</a>
                               </td>
-                              <td colspan="2"><b>Grand Total</b></td>
-                              <td>$<?= $grand_total ?></td>
+                              <td colspan="2"><b>Total Amount</b></td>
+                              <td>$<?= $total_amount ?></td>
                               <td>
-                                  <a href="checkout.php" class="btn btn-info <?= ($grand_total >1)? "" : "disabled" ?>"><i class="fa fa-credit-card"></i>&nbsp;&nbsp;Checkout</a>
+                                  <a href="checkout.php" class="btn btn-primary <?= ($total_amount >1)? "" : "disabled" ?>"><i class="fa fa-credit-card"></i>&nbsp;&nbsp;Checkout</a>
                               </td>
                           </tr>
                    </tbody>
