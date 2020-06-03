@@ -17,15 +17,16 @@
     <link rel="shortcut icon" type="images/favicon/jpg" href="./images/cafeicon4.jpg">
     
     <!-- Stylesheets -->
-		<link rel="stylesheet" type="text/css" href="./css/main.css">
-
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    
+    <script src="https://kit.fontawesome.com/d291abbb8d.js" crossorigin="anonymous"></script>
 
     <title>Coffee Prince</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <!-- Brand -->
-      <div><img src="./images/cafeicon4.jpg" style="height: 30px; border-right: 1px solid #333;" class="pr-3" alt=""></div>
+      <div><img src="./images/cafeicon4.jpg" style="height: 30px;" class="pr-0" alt=""></div>
         <div class="container">Coffee Prince</div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav">
             <span class="navbar-toggler-icon"></span>
@@ -93,7 +94,7 @@
                        <td>$<?= $row['total_price'] ?></td>
                        <td><a href="action.php?remove=<?= $row['id'] ?>" class="text-danger lead" onclick="return confirm('Are you sure want to remove this item');"><i class="fa fa-trash"></i></a></td>
                        </tr>
-                       <?php $total_amount += $row['total_price']; ?>
+                       <?php $total_amount += (float)$row['total_price']; ?>
                           <?php endwhile; ?>
                           <tr>
                               <td colspan="3">
@@ -157,8 +158,23 @@
 
        });
     </script>
-    <footer class="card bg-light text-center py-5">
-        <p>Copyright 2020. Coffee Prince. All Rights Reserved</p>
-      </footer>
+    
+    <footer>
+      <div class="row bg-light text-center">
+        <div class="col-md-4 smed">
+          <a href="#" target="_blank"><i class="fab fa-facebook-square"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-twitter-square"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-instagram-square"></i></a>
+          <a href="https://youtu.be/N8meCjVsJWI" target="_blank"><i class="fab fa-youtube-square"></i></a>
+       </div>
+       <div class="col-md-4">
+         <p class="text-center mb-2 p-4">Copyright 2020. Coffee Prince. All Rights Reserved</p>
+       </div>
+       <div class="col-md-4 ml-auto">
+           <a class="" href="#"><img src="./images/cafeicon4.jpg" style="height: 30px;" alt="logo"></a><p>Coffee Prince</p>
+         </div>
+     </div>
+     
+    </footer>
   </body>
 </html>

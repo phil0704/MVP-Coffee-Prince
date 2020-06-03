@@ -13,15 +13,16 @@
     <link rel="shortcut icon" type="images/favicon/jpg" href="./images/cafeicon4.jpg">
     
     <!-- Stylesheets -->
-		<link rel="stylesheet" type="text/css" href="./css/main.css">
-
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    
+    <script src="https://kit.fontawesome.com/d291abbb8d.js" crossorigin="anonymous"></script>
 
     <title>Coffee Prince</title>
   </head>
   <body data-spy="scroll" data=".navbar" data-offset="50">
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <!-- Brand -->
-      <div><img src="./images/cafeicon4.jpg" style="height: 30px; border-right: 1px solid #333;" class="pr-3" alt=""></div>
+      <div><img src="./images/cafeicon4.jpg" style="height: 30px;" class="pr-0" alt=""></div>
         <div class="container">Coffee Prince</div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNav">
             <span class="navbar-toggler-icon"></span>
@@ -46,7 +47,7 @@
 
    <section class="card bg-light text-center py-5">
      <div class="col -md-4 pd-3 pf">
-       <h3 class="text-center h3w">Location</h3>
+       <h3 class="text-center text-muted">Our new Store Location. Opening Soon</h3>
         <div class="p-4 mt-4">
           <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJudnwZ_kboFMRHEleSMazhpk&key=AIzaSyAw-QgwU5AzE8zBUEMUaxatpNEA0uS1z7k" allowfullscreen></iframe>
        </div>
@@ -59,8 +60,23 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script src="https://js.stripe.com/v3/"></script>
-    <footer class="card bg-light text-center py-5">
-        <p>Copyright 2020. Coffee Prince. All Rights Reserved</p>
-      </footer>
+    
+    <footer>
+      <div class="row bg-light text-center">
+        <div class="col-md-4 smed">
+          <a href="#" target="_blank"><i class="fab fa-facebook-square"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-twitter-square"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-instagram-square"></i></a>
+          <a href="https://youtu.be/N8meCjVsJWI" target="_blank"><i class="fab fa-youtube-square"></i></a>
+       </div>
+       <div class="col-md-4">
+         <p class="text-center mb-2 p-4">Copyright 2020. Coffee Prince. All Rights Reserved</p>
+       </div>
+       <div class="col-md-4 ml-auto">
+           <a class="" href="#"><img src="./images/cafeicon4.jpg" style="height: 30px;" alt="logo"></a><p>Coffee Prince</p>
+         </div>
+     </div>
+    </footer>
+
   </body>
 </html>
