@@ -59,8 +59,8 @@
     </nav> 
 
     <div class="container1">
-        <div class="row1 justify-content-center">
-            <div class="col-log-6 px-4 pb-4" id="order">
+       <div class="row1 justify-content-center">
+          <div class="col-log-6 px-4 pb-4" id="order">
             <h4 class="text-center text-muted p-2">Complete your Order!</h4>
             <div class="jumbotron p-3 mb-2 text-center">
                 <h6 class="lead"><b>Product(s) : </b><?= $allItems; ?></h6>
@@ -71,12 +71,12 @@
                <input type="hidden" name="products" value="<?= $allItems; ?>">
                <input type="hidden" name="total_amount" value="<?= $total_amount; ?>">
 
-             <div class="row1">
+               <div class="row1">
                  <div class="col-75">
                     <div class="container">
                        <div class="row1">
                            <div class="col-50 text-center text-muted">
-                               <h3>Billing Address</h3>
+                                <h3>Billing Address</h3>
                                 <label for="fname"><i class="fa fa-user"></i> Full Name</label>
                                 <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
                                 <label for="email"><i class="fa fa-envelope"></i> Email</label>
@@ -85,20 +85,19 @@
                                 <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
                                 <label for="city"><i class="fa fa-institution"></i> City</label>
                                 <input type="text" id="city" name="city" placeholder="Edmonton">
-                                  <div class="row">
+                                    <div class="row">
+                                        <div class="col-50">
+                                            <label for="state">Province</label>
+                                            <input type="text" id="state" name="state" placeholder="AB">
+                                       </div>
                                     <div class="col-50">
-                                       <label for="state">Province</label>
-                                       <input type="text" id="state" name="state" placeholder="AB">
-                                    </div>
-                                    <div class="col-50">
-                                       <label for="zip">Postal Code</label>
-                                       <input type="text" id="zip" name="zip" placeholder="T6G 2B7">
-                                    </div>
-                                 </div>
-                           </div>
-
+                                            <label for="zip">Postal Code</label>
+                                            <input type="text" id="zip" name="zip" placeholder="T6G 2B7">
+                          </div>
+                     </div>
+                 </div>
                                <div class="col-50 text-center text-muted">
-                                 <h3>Payment</h3>
+                                  <h3>Payment</h3>
                                     <label for="fname">Accepted Cards</label>
                                   <div class="icon-container">
                                      <i class="fa fa-cc-visa" style="color:navy;"></i>
@@ -120,59 +119,24 @@
                                       <div class="col-50">
                                           <label for="cvv">CVV</label>
                                           <input type="text" id="cvv" name="cvv" placeholder="352">
-                                       </div>
+                                      </div>
                                   </div>
-                               </div>
-          
-                         </div>
-                            <label>
-                               <input type="checkbox" checked="checked" name="sameadr"> 
-                                  Shipping address same as billing
-                            </label>
-                               <input type="submit" value="Continue to checkout" class="btn">
-                      </div>
-                 </div>
-                 <div class="col-25">
-    <!--- <div class="container">
-      <h4>Cart <span class="price" style="color:black">
-      <i class="fa fa-shopping-cart"></i></span></h4>
-      <h6 class="lead"><b>Product(s) : </b><?= $allItems; ?></h6>
-      <h6 class="lead"><b>Delivery Charge : </b>Free of Charge</h6>
-      <h5><b> Total Amount Payable : </b>$<?= ($total_amount) ?></h5>
-      <hr>
-    </div> -->
-  </div>
-             </div>
-               <!---
-               <div class="form-group">
-                   <input type="text" name="firstName" class="form-control mb-3" placeholder="First Name" required>
-                   <input type="text" name="lastName" class="form-control  mb-3" placeholder="Last Name" required>
-                   <input type="email" name="email" class="form-control mb-3" placeholder="Email Address" required>
-                   <input type="tel" name="phone" class="form-control  mb-3" placeholder="Telephone #" required>
-                   <textarea name="address" class="form-control" cols="10" rows="3" placeholder="Address"></textarea>
-               </div>
-               <div class="form-group">
-                   <input type="text" name="first_name" class="form-control mb-3" placeholder="Card Name" required>
-                   <div id="card-element" class="form-control">
-                       a Stripe Element will be inserted here.
-                   </div>
-                       Used to display errors 
-                   <div id="card-errors" role="alert"></div>
-               </div>
-               <h6 class="text-center lead">Select Payment Mode</h6>
-               <div class="form-group">
-                   <select name="pmode" class="form-control">
-                   <option value="" select disabled>-Select Payment Mode-</option>
-                   <option value="cards">Debit/Credit Card</option>
-                   </select>
-               </div>
-               <div class="form-group">
-                   <input type="submit" name="submit" value="Submit Payment" class="btn btn-primary btn-block"> -->
-               </div>
+                              </div>
+                  </div>
+                  
+                                    <label>
+                                     <input type="checkbox" checked="checked" name="sameadr"> 
+                                         Shipping address same as billing
+                                     </label>
+                                     <input type="submit" value="Continue to checkout" class="btn btn-success">
+                          </div>
+                     </div>
+                 </div> 
+                                    
             </form>
           </div>
         </div>
-    </div> 
+     </div> 
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

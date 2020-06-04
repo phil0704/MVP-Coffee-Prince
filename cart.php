@@ -46,7 +46,7 @@
 
     <div class="container">
       <div class="row justify-content-center">
-         <div clss="col-lg-10">
+         <div class="col-lg-10">
             <div style="display:<?php if(isset($_SESSION['showAlert'])) { echo $_SESSION['showAlert']; } 
             else { echo 'none';} unset($_SESSION['showAlert']); ?>" class="alert alert-success alert-dismissible mt-3">
                <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -103,7 +103,7 @@
                               <td colspan="2"><b>Total Amount</b></td>
                               <td>$<?= $total_amount ?></td>
                               <td>
-                                  <a href="checkout.php" class="btn btn-primary <?= ($total_amount >1)? "" : "disabled" ?>"><i class="fa fa-credit-card"></i>&nbsp;&nbsp;Checkout</a>
+                                  <a href="checkout.php" class="btn btn-success <?= ($total_amount >1)? "" : "disabled" ?>"><i class="fa fa-credit-card"></i>&nbsp;&nbsp;Checkout</a>
                               </td>
                           </tr>
                    </tbody>
@@ -174,7 +174,7 @@
            <a class="" href="#"><img src="./images/cafeicon4.jpg" style="height: 30px;" alt="logo"></a><p>Coffee Prince</p>
          </div>
      </div>
-     
+
     </footer>
   </body>
 </html>

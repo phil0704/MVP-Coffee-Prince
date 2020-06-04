@@ -77,10 +77,9 @@
 
     </div>
         
-        <h1>Welcome To Coffee Prince</h1>
-        <p>These exceptional tasting coffees originate from a single estate, or farm, in a specific growing area. The growing conditions like soil, altitude, climate, shade in these areas are considered ideal for creating premium, specialty coffees. These pure coffees capture the unique essence of a particular plant variety and region.</p>
+        
       </div>
-            <a href="product.php" class="btn btn-primary">Shop Now</a>
+           
     </div>
 
     

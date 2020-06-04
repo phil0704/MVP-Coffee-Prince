@@ -80,7 +80,6 @@
    if(isset($_POST['action']) && isset($_POST['action']) == 'order') {
        $name = $_POST['firstname'];
        $email = $_POST['email'];
-       
        $products = $_POST['products'];
        $total_amount= $_POST['total_amount'];
        $address= $_POST['address'];
@@ -92,13 +91,13 @@
        $stmt->bind_param("sssssss", $name, $email, $phone, $address, $pmode, $products, $total_amount);
        $stmt->execute();
        $data .= '<div class="text-center">
-                  <h1 class="display-4 mt-2 text-danger">Thank You</h1>
-                  <h2 class="text-success">Your order Placed Successfully!</h2>
+                  <h1 class="display-4 mt-2 text-muted">Thank You</h1>
+                  <h2 class="text-muted">Your Order Placed Successfully!</h2>
                   <h4 class="bg-danger exit-light rounded pd-2">Items Purchased : '.$products.'</h4>
                   <h4>Name : '.$name.'</h4>
                   <h4>Email : '.$email.'</h4>
                   <h4>Address : '.$address.'</h4>
-                  <h4>Total Amount paid : '.($total_amount).'</h4>
+                  <h4>Total Amount paid : $'.number_format($total_amount, 2).'</h4>
                 </div>';
         echo $data;        
    }
