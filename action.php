@@ -90,10 +90,10 @@
        $stmt = $conn->prepare("INSERT INTO orders (name, email, phone, address, pmode, products, amount_paid) VALUES(?,?,?,?,?,?,? )");
        $stmt->bind_param("sssssss", $name, $email, $phone, $address, $pmode, $products, $total_amount);
        $stmt->execute();
-       $data .= '<div class="text-center">
+       $data .= '<div class=" cart text-center">
                   <h1 class="display-4 mt-2 text-muted">Thank You</h1>
                   <h2 class="text-muted">Your Order Placed Successfully!</h2>
-                  <h4 class="bg-danger exit-light rounded pd-2">Items Purchased : '.$products.'</h4>
+                  <h4 class="bg-exit-light pd-2">Items Purchased : '.$products.'</h4>
                   <h4>Name : '.$name.'</h4>
                   <h4>Email : '.$email.'</h4>
                   <h4>Address : '.$address.'</h4>

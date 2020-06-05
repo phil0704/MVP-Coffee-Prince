@@ -74,12 +74,13 @@
     </div>
       
     <div class="container text-muted">
-    <h4 class="text-center mb-4">Coffee Prince Roaster... Opening Soon</h4>
+    <h3 class="text-center mb-4">Coffee Prince Roaster... Opening Soon</h3>
+    <h4>Come and Visit Us!</h4>
     <p>Our passion is to highlight exciting flavours while caring for our producers, partners and community.</p>
     <h4>Highlights</h4>
     <p>We are giving a free Coffee and Donut for the first 50 customer.</p>
     </div>
-
+      
   </div> 
   
     <!-- Optional JavaScript -->
@@ -136,9 +137,9 @@
     <footer>
       <div class="row bg-light text-center">
         <div class="col-md-4 smed">
-          <a href="#" target="_blank"><i class="fab fa-facebook-square"></i></a>
-          <a href="#" target="_blank"><i class="fab fa-twitter-square"></i></a>
-          <a href="#" target="_blank"><i class="fab fa-instagram-square"></i></a>
+          <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square"></i></a>
+          <a href="https://twitter.com/explore" target="_blank"><i class="fab fa-twitter-square"></i></a>
+          <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram-square"></i></a>
           <a href="https://youtu.be/N8meCjVsJWI" target="_blank"><i class="fab fa-youtube-square"></i></a>
        </div>
        <div class="col-md-4">

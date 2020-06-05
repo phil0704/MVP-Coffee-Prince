@@ -44,7 +44,7 @@
             </div>
     </nav> 
 
-    <div class="container">
+    <div class="container2">
       <div class="row justify-content-center">
          <div class="col-lg-10">
             <div style="display:<?php if(isset($_SESSION['showAlert'])) { echo $_SESSION['showAlert']; } 
@@ -101,7 +101,7 @@
                                   <a href="product.php" class="btn btn-success"><i class="fa fa-cart-plus"></i>&nbsp;&nbsp;Continue Shopping</a>
                               </td>
                               <td colspan="2"><b>Total Amount</b></td>
-                              <td>$<?= $total_amount ?></td>
+                              <td>$<?= number_format($total_amount, 2) ?></td>
                               <td>
                                   <a href="checkout.php" class="btn btn-success <?= ($total_amount >1)? "" : "disabled" ?>"><i class="fa fa-credit-card"></i>&nbsp;&nbsp;Checkout</a>
                               </td>
@@ -158,13 +158,13 @@
 
        });
     </script>
-    
-    <footer>
+     
+     <footer>
       <div class="row bg-light text-center">
         <div class="col-md-4 smed">
-          <a href="#" target="_blank"><i class="fab fa-facebook-square"></i></a>
-          <a href="#" target="_blank"><i class="fab fa-twitter-square"></i></a>
-          <a href="#" target="_blank"><i class="fab fa-instagram-square"></i></a>
+          <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square"></i></a>
+          <a href="https://twitter.com/explore" target="_blank"><i class="fab fa-twitter-square"></i></a>
+          <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram-square"></i></a>
           <a href="https://youtu.be/N8meCjVsJWI" target="_blank"><i class="fab fa-youtube-square"></i></a>
        </div>
        <div class="col-md-4">
@@ -174,7 +174,7 @@
            <a class="" href="#"><img src="./images/cafeicon4.jpg" style="height: 30px;" alt="logo"></a><p>Coffee Prince</p>
          </div>
      </div>
-
     </footer>
+    
   </body>
 </html>

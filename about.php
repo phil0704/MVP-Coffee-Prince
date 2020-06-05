@@ -39,63 +39,55 @@
             </div>
     </nav> 
 
-    <div class="jumbotron jumbotron-fluid bg-dark text-white text-center">
-      <div class="container">
+   <div class="jumbotron jumbotron-fluid bg-dark text-white text-center">
+      <div class="container mt-4">
 
-      <div id="demo" class="carousel slide" data-ride="carousel">
-
-         <!-- Indicators -->
-       <ul class="carousel-indicators">
-         <li data-target="#demo" data-slide-to="0" class="active"></li>
-         <li data-target="#demo" data-slide-to="1"></li>
-         <li data-target="#demo" data-slide-to="2"></li>
-       </ul>
-
-        <!-- The slideshow -->
-      <div class="carousel-inner mt-2 mb-2">
-         <div class="carousel-item active">
-           <img src="./images/coffee-farm3.jpg" alt="Coffee Farm">
+        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+          <div class="carousel-inner">
+             <div class="carousel-item active">
+               <img src="./images/coffee-factory5.jpg" class="d-block w-100" alt="Coffee Farm">
+             </div>
+             <div class="carousel-item">
+               <img src="./images/coffee-farm30.jpg" class="d-block w-100" alt="Coffee Farm">
+             </div>
+             <div class="carousel-item">
+               <img src="./images/coffee-farm50.jpg" class="d-block w-100" alt="Coffee Factory">
+             </div>
+             <div class="carousel-item">
+               <img src="./images/coffee-farm40.jpg" class="d-block w-100" alt="Coffee Factory">
+             </div>
+             <div class="carousel-item">
+               <img src="./images/coffee-factory10.jpg" class="d-block w-100" alt="Coffee Factory">
+             </div>
+             <div class="carousel-item">
+               <img src="./images/coffee-factory11.jpg" class="d-block w-100" alt="Coffee Factory">
+             </div>
+             <div class="carousel-item">
+               <img src="./images/coffee-farm12.jpg" class="d-block w-100" alt="Coffee Factory">
+             </div>
           </div>
-            <div class="carousel-item">
-              <img src="./images/coffee-farm4.jpg" alt="Coffee Farm">
-            </div>
-         <div class="carousel-item">
-             <img src="./images/coffee-factory1.jpg" alt="Coffee Factory">
-         </div>
-         <div class="carousel-item">
-             <img src="./images/coffee-factory2.jpg" alt="Coffee Factory">
-         </div>
+               <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                 <span class="sr-only">Previous</span>
+               </a>
+               <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                 <span class="sr-only">Next</span>
+               </a>
+        </div>
+   
       </div>
-
-        <!-- Left and right controls -->
-       <a class="carousel-control-prev" href="#demo" data-slide="prev">
-          <span class="carousel-control-prev-icon"></span>
-       </a>
-       <a class="carousel-control-next" href="#demo" data-slide="next">
-          <span class="carousel-control-next-icon"></span>
-       </a>
-
-    </div>
-        
-        
-      </div>
-           
     </div>
 
-    
     <section>
         <div class="container">
-            <div class="row">
-                <div class="col-md-4 mt-2">
+            <div class="row2">
                     <h2>About</h2>
-                    <p>James Sebastian Dean, Owner and Entrepreneur. After finishing his degree in Univeristy of Alberta major in Business Administration. He pursue his dream to own a business. Being a Coffee Lover, Coffee Prince was introduced and established in July 2017 selling and importing coffee bean from different Continents to offer the best quality of coffee bean here in Canada.
-                    Coffee Prince imports Brazilian, Costa Rican, The Philippines, Indonesian, Colombian, and African beans. All beans are roasted in small batches weekly to produce the freshest, highest quality coffees.
-                    We are very proud of our personal and direct trade relationship with the other company around the world. 
-                    In September 2018, Coffee Prince opened it's first Coffee Bar in Edmonton, AB Canada. The shop has quickly become known for it's exquisite pour-overs, open-concept roastery, exceptional service and fresh and pure coffees.
+                    <p><strong>James Sebastian Dean</strong>, Owner and Entrepreneur. After finishing his degree in Univeristy of Alberta major in Business Administration. He pursue his dream to own a business. Being a Coffee Lover, Coffee Prince was introduced and established in July 2017 selling and importing coffee bean from different Continents to offer the best quality of coffee bean here in Canada.
+                    <a href="index.php">Coffee Prince</a> imports <i>Brazilian, Costa Rican, The Philippines, Indonesian, Colombian, and African</i> beans. All beans are roasted in small batches weekly to produce the freshest, highest quality coffees. We are very proud of our personal and direct trade relationship with the other company around the world. This coming fall of 2020 The <strong>Coffee Prince Roater</strong> will open a first Coffee shop in Edmonton, AB Canada. The shop has quickly become known for it's exquisite pour-overs, open-concept roastery, exceptional service and fresh and pure coffees.
                    </p>
-                </div>
                   <figure>
-                    <img src="./images/coffee-owner.jpg" alt="Company Owner">
+                    <img src="./images/coffee-owner.jpg" class="img-fluid" alt="Company Owner">
                   </figure>
             </div>
         </div>
@@ -110,9 +102,9 @@
     <footer>
       <div class="row bg-light text-center">
         <div class="col-md-4 smed">
-          <a href="#" target="_blank"><i class="fab fa-facebook-square"></i></a>
-          <a href="#" target="_blank"><i class="fab fa-twitter-square"></i></a>
-          <a href="#" target="_blank"><i class="fab fa-instagram-square"></i></a>
+          <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square"></i></a>
+          <a href="https://twitter.com/explore" target="_blank"><i class="fab fa-twitter-square"></i></a>
+          <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram-square"></i></a>
           <a href="https://youtu.be/N8meCjVsJWI" target="_blank"><i class="fab fa-youtube-square"></i></a>
        </div>
        <div class="col-md-4">
