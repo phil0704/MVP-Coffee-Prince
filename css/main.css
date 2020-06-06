@@ -106,6 +106,65 @@ a {
   margin-left: 10px;
 }
 
+.subscribe-area {
+  background-color: #696969;
+}
+.pb-50 {
+  padding-bottom: 50px;
+}
+.pt-70 {
+  padding-top: 70px;
+}
+.mb-15 {
+  margin-bottom: 15px;
+}
+.subscribe-text span {
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 5px;
+  font-family: sans-serif;
+}
+.subscribe-text h2 {
+  color: #fff;
+  font-size: 36px;
+  font-weight: 300;
+  margin-bottom: 0;
+  margin-top: 6px;
+  padding-left: 35px;
+}
+.subscribe-wrapper {
+  overflow: hidden;
+}
+
+.subscribe2-wrapper .subscribe-form input {
+  background: none;
+  border: 2px solid #fff;
+  border-radius: 30px;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 300;
+  height: 50px;
+  margin-right: 17px;
+  padding-left: 20px;
+  width: 55%;
+}
+.subscribe2-wrapper .subscribe-form button {
+  background: #fff;
+  border: none;
+  border-radius: 30px;
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1;
+  padding: 18px 18px;
+  transition: all 0.3s ease 0s;
+}
+.subscribe2-wrapper .subscribe-form button i {
+  font-size: 18px;
+  padding-left: 5px;
+}
+
 /* Clear floats after the columns */
 .row:after {
   content: "";

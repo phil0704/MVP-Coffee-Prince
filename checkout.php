@@ -38,8 +38,8 @@
 
     <title>Checkout Form</title>
   </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <body data-spy="scroll" data=".navbar" data-offset="50">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
       <!-- Brand -->
       <div><img src="./images/cafeicon4.jpg" style="height: 30px;" class="pr-0" alt=""></div>
         <div class="container">Coffee Prince</div>

@@ -16,6 +16,7 @@
 		<link rel="stylesheet" type="text/css" href="./css/main.css">
 
     <script src="https://kit.fontawesome.com/d291abbb8d.js" crossorigin="anonymous"></script>
+    <script src="js/jquery.min.js"></script>
 
     <title>Coffee Prince</title>
   </head>

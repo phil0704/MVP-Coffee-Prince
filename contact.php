@@ -60,6 +60,88 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script src="https://js.stripe.com/v3/"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+    <section class="subscribe-area pb-45 pt-65">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-12 col-xs-12">
+          <div class="subscribe-text mb-15">
+            <span>JOIN OUR NEWSLETTER</span>
+            <h2>Subscribe Newsletter</h2>
+          </div>
+        </div>
+        <div class="c0l-md-8 col-sm-12 col-xs-12">
+        <div class="subscribe-wrapper subscribe2-wrapper mb-15">
+        <div class="subscribe-form">
+           <form action="#" id="subscribeBtn" method="post">
+          <input placeholder="enter your email address" type="email" id="email"required>
+          <button id="submitbtn"><i class="fas fa-long-arrow-alt-right"></i></button>
+          </form>
+        </div>
+      </div>
+      </div>
+      </div>
+      </div>
+    </section>
+
+    <script>
+$(document).ready(function(){
+    $('#subscribeBtn').on('submit', function(e){ e.preventDefault();
+        // Remove previous status message
+        $('.status').html('');
+		
+        // Email and name regex
+        var regEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
+       
+		
+        // Get input values
+       
+        var email = $('#email').val();
+		
+        // Validate input fields
+      
+        if(email.trim() == '' ){
+            alert('Please enter your email.');
+            $('#email').focus();
+            return false;
+        }else if(email.trim() != '' && !regEmail.test(email)){
+            alert('Please enter a valid email.');
+            $('#email').focus();
+            return false;
+        }else {
+          console.log('submitting form');
+            // Post subscription form via Ajax
+            $.ajax({
+                type:'POST',
+                url:'subscription.php',
+                dataType: "json",
+                data:{subscribe:1,email:email},
+                beforeSend: function () {
+                    $('#subscribeBtn').attr("disabled", "disabled");
+                    $('.content-frm').css('opacity', '.5');
+                },
+                success:function(data){
+                    if(data.status == 'ok'){
+                        $('#subsFrm')[0].reset();
+                        $('.status').html('<p class="success">'+data.msg+'</p>');
+                    }else{
+                        $('.status').html('<p class="error">'+data.msg+'</p>');
+                    }
+                    $('#subscribeBtn').removeAttr("disabled");
+                    $('.content-frm').css('opacity', '');
+                    console.log("sent");
+                },
+                error:function(error) {
+                  console.log(error);
+                }
+            });
+        }
+    });
+});
+</script>
+
     
     <footer>
       <div class="row bg-light text-center">
