@@ -62,35 +62,26 @@
     <script src="https://js.stripe.com/v3/"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-
-    <section class="subscribe-area pb-45 pt-65">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4 col-sm-12 col-xs-12">
-          <div class="subscribe-text mb-15">
-            <span>JOIN OUR NEWSLETTER</span>
-            <h2>Subscribe Newsletter</h2>
-          </div>
-        </div>
-        <div class="c0l-md-8 col-sm-12 col-xs-12">
-        <div class="subscribe-wrapper subscribe2-wrapper mb-15">
-        <div class="subscribe-form">
-           <form action="#" id="subscribeBtn" method="post">
-          <input placeholder="enter your email address" type="email" id="email"required>
-          <button id="submitbtn"><i class="fas fa-long-arrow-alt-right"></i></button>
-          </form>
-        </div>
-      </div>
-      </div>
-      </div>
-      </div>
-    </section>
-
-    <script>
-$(document).ready(function(){
-    $('#subscribeBtn').on('submit', function(e){ e.preventDefault();
+    
+     <div class="wrapper">
+	      <h1>JOIN OUR NEWSLETTER</h1>
+	      <p>Subscribe to our Newsletter</p>
+	     <div class="status">
+        <form action="#" id="subscribeBtn" method="post">
+		       <input type="text" class="input" id="email" placeholder="Enter Your Email" required>
+           <i class="fas fa-envelope"></i>
+           <button class="btn" id="SubsFrm">Subscribe</button>
+        </form>
+	    </div>
+    </div>
+    
+   
+<script>
+  $(document).ready(function(){
+     $('#subscribeBtn').on('submit', function(e){ e.preventDefault();
+     
         // Remove previous status message
-        $('.status').html('');
+        //$('.status').html('');
 		
         // Email and name regex
         var regEmail = /^[A-Z0-9._%+-]+@([A-Z0-9-]+\.)+[A-Z]{2,4}$/i;
@@ -99,6 +90,7 @@ $(document).ready(function(){
         // Get input values
        
         var email = $('#email').val();
+        console.log($("#email"));
 		
         // Validate input fields
       
@@ -120,7 +112,7 @@ $(document).ready(function(){
                 data:{subscribe:1,email:email},
                 beforeSend: function () {
                     $('#subscribeBtn').attr("disabled", "disabled");
-                    $('.content-frm').css('opacity', '.5');
+                    
                 },
                 success:function(data){
                     if(data.status == 'ok'){
@@ -130,16 +122,16 @@ $(document).ready(function(){
                         $('.status').html('<p class="error">'+data.msg+'</p>');
                     }
                     $('#subscribeBtn').removeAttr("disabled");
-                    $('.content-frm').css('opacity', '');
+                   
                     console.log("sent");
                 },
                 error:function(error) {
                   console.log(error);
                 }
             });
-        }
+          }
+       });
     });
-});
 </script>
 
     
