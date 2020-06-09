@@ -57,7 +57,8 @@ if(isset($_POST['subscribe'])){
                 <br><p><strong>'.$siteName.' Team</strong></p>'; 
                  
                 $headers = "MIME-Version: 1.0" . "\r\n";  
-                $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";  
+                $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n"; 
+                $headers .= "From: $siteName"." <".$siteEmail.">"; 
                
                 // Send verification email 
                 $mail = mail($email, $subject, $message, $headers); 
@@ -102,7 +103,7 @@ if(isset($_POST['subscribe'])){
         } else {
             $statusMsg = '<p class="error">You have clicked on the wrong link, please check your email and try again.</p>';
         }
-  }            
+    }         
 ?>
 
 <!DOCTYPE html>
@@ -121,7 +122,7 @@ if(isset($_POST['subscribe'])){
                 <div class="sloc-text">
                     <div class="sloc-header"><?php if(isset($statusMsg)) echo $statusMsg; ?></div>
                 </div>
-                <a href="<?php echo $site; ?>" class="cwlink">Go to Site</a>
+                <a href="<?php echo $siteURL; ?>" class="cwlink">Go to Site</a>
             </div>
 
         </div>

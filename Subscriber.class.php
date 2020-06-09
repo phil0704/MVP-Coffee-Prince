@@ -1,12 +1,12 @@
 <?php
 /*
-*Subsciber class
+*Subscriber class
 */
 class Subscriber { 
-    private $dbHost     = "localhost"; 
-    private $dbUsername = "root"; 
-    private $dbPassword = "root"; 
-    private $dbName     = "cart_system"; 
+    private $dbHost     = 'localhost'; 
+    private $dbUsername = 'root'; 
+    private $dbPassword = 'root'; 
+    private $dbName     = 'cart_system'; 
     private $userTbl    = 'subscribers'; 
      
     function __construct(){ 

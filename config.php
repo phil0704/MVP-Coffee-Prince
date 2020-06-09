@@ -8,9 +8,9 @@
    }
 
    // Site Settings
-   $siteName = 'Demo Site';
+   $siteName = 'MVP-Coffee-Prince';
    $siteEmail = 'ashphil07@gmail.com';
 
-   $siteURL = (isset($_SERVER['HTTPS'] ) && $_SERVER['HTTPS'])?'https://': 'http://';
+   $siteURL = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'])?'https://': 'http://';
    $siteURL = $siteURL.$_SERVER['SERVER_NAME'].dirname($_SERVER['REQUEST_URI']). '/';
 ?>

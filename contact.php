@@ -90,20 +90,19 @@
         // Get input values
        
         var email = $('#email').val();
-        console.log($("#email"));
-		
+       
         // Validate input fields
       
         if(email.trim() == '' ){
             alert('Please enter your email.');
             $('#email').focus();
-            return false;
+            return false;   
         }else if(email.trim() != '' && !regEmail.test(email)){
             alert('Please enter a valid email.');
             $('#email').focus();
             return false;
         }else {
-          console.log('submitting form');
+      
             // Post subscription form via Ajax
             $.ajax({
                 type:'POST',
